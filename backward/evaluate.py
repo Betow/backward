@@ -50,13 +50,13 @@ def eval_atom(ctx, atom, ask):
             val.data = eval_node(ctx, val.rule, ask)
             return val.data
     else:
-        print("Answer Yes (y) or No (n):")
+        print("Responda Sim (s) ou Não (n):")
         
         val = input(ask[atom.data])
         
-        assert val == "y" or val == "n", "You must answer Yes (y) or No (n)."
+        assert val == "s" or val == "n", "Você deve responder Sim (s) ou Não (n)."
         
-        val = True if val == "y" else False
+        val = True if val == "s" else False
 
         ctx[atom.data] = proto(data=val, seen=True, rule=None)
 
